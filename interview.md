@@ -34,11 +34,11 @@ $L(w)=\prod_{i=1}^N P(Y=1|x)^{y_i} P(Y=0|x)^{1-y_i}$
 使用梯度下降法或者拟牛顿法求解w.
 
 ## svm支撑向量机
-- 最基本模型：最大化间隔
+- 最基本模型-最大化间隔
 $$min_{w,b} \ \ \frac{1}{2}||w||^2$$
 $$s.t. \ \ y_i(w^{T}x_i+b) \geq 1,\ i=1,2,\cdots,m.$$
 - 对偶问题
-$$max_{\alpha| \ \ \sum_{i=1}^m \alpha_i-\frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j x_i^{T}x_j$$
+$$max_{\alpha} \ \ \sum_{i=1}^m \alpha_i-\frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j x_i^{T}x_j$$
 $$s.t. \ \ \sum_i \alpha_i y_i=0,\ \alpha_i \geq 0,\ i=1,2,\cdots,m.$$
 
 ## Adaboost
