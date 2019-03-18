@@ -51,6 +51,13 @@ $$max_{\alpha} \ \ \sum_{i=1}^m \alpha_i-\frac{1}{2}\sum_i \sum_j \alpha_i \alph
 $$s.t. \ \ \sum_i \alpha_i y_i=0,\ 0 \leq \alpha_i \leq C,\ i=1,2,\cdots,m.$$
 
 ## Adaboost
+Adaboost提高那些被前一轮分类器错误分类样本的权重；多分类器的组合，Adaboost采取加权多数表决的方法.
+1. 权值分布：$D_m=(w_{m1},w_{m2},\cdots,w_{mN})$，计算第m个基分类器：
+$$G_m(x): \mathcal{X} \gets {-1,+1}$$
+2. 分类误差：$e_m=\sum w_{mi}I(G_m(x_i) \\neq y_i)$,基分类器的权重系数：$\alpha_m=\frac{1}{2}ln(\frac{1-e_m}{e_m})$.
+3. 更新权重：$w_{m+1,i}=\frac{w_{mi}e^{-\alpha_m y_i G_m(x_i))}}{Z_m}$，其中$Z_m=\sum w_{mi}e^{-\alpha_m y_i G_m(x_i)}.$
+4. 最终分类器：$f(x)=\sum \alpha_m G_m(x_i), \ G(x)=sign(f(x)).$
+
 GBDT算法.
 
 # 数据结构
