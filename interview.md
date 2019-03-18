@@ -1,8 +1,15 @@
 # 机器学习  
-## k近邻
-多数表决分类策略：for (x,y),$y=argmax_{c_j}\sum_{x_i \in N_k(x) I(y_i=c_j).$
+
 ## 感知器
-二分类的线性模型：$f(x)=sign(w \cdot x+b)$,策略是极小化损失函数：$min_{w,b} L(w,b)=-\sum_{x_i \in M}y_i (w_i \cdot x_i+b).$，通常采用随机梯度下降法求解.
+二分类的线性模型：$f(x)=sign(w \cdot x+b)$,策略是极小化损失函数：$min_{w,b} L(w,b)=-\sum_{x_i \in M}y_i (w_i \cdot x_i+b)$，M是误分类样本集合，通常采用随机梯度下降法求解.
+
+## k近邻
+多数表决分类策略：for (x,y),$y=argmax_{c_j}\sum_{x_i \in N_k(x)} I(y_i=c_j)$
+
+## 朴素贝叶斯
+朴素贝叶斯是典型的生成学习方法，目标是学习联合概率分布P(X,Y)，进而求得后验概率分布P(Y|X).其基本假设是属性的条件独立性，即$P(X=x|Y=c_k)=\prod_{j=1}^n P(X^{(j)}=x^{j}|Y=c_k).$  
+$P(Y|X)=\frac{P(X,Y)}{P(Y)}=\frac{P(Y)P(X|Y)}{\sum_Y P(Y)P(X|Y)}$,预测时$y=argmin_{c_k}P(Y=c_k)\prod_{j=1}^n P(X^{(j)}=x^{(j)}|Y=c_k).$  估计类条件概率时，常使用类条件概率估计假设分布的参数，使用拉普拉斯平滑解决概率为0的情形.
+
 ## Tree分类回归树
 ### 离散分类树
 1. 特征选择：信息增益、信息增益比、基尼指数
