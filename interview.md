@@ -45,11 +45,10 @@ $$s.t. \ \ \sum_i \alpha_i y_i=0,\ \alpha_i \geq 0,\ i=1,2,\cdots,m.$$
 - 核方法
 $$max_{\alpha} \ \ \sum_{i=1}^m \alpha_i-\frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j \mathcal{k}(x_i,x_j)$$
 $$s.t. \ \ \sum_i \alpha_i y_i=0,\ \alpha_i \geq 0,\ i=1,2,\cdots,m.$$
-- 软间隔
-替代$l_{0/1}$损失函数：hinge损失$max{0,1-z}$、指数损失$e^{-z}$、对率损失$log(1+e^{-z})$.
+- 软间隔  
+替代$l_{0/1}$损失函数：hinge损失$max(0,1-z)$、指数损失$e^{-z}$、对率损失$log(1+e^{-z})$.
 $$max_{\alpha} \ \ \sum_{i=1}^m \alpha_i-\frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j x_i^{T}x_j$$
-$$s.t. \ \ \sum_i \alpha_i y_i=0,\ 0 \geq \alpha_i \leq C,\ i=1,2,\cdots,m.$$
-
+$$s.t. \ \ \sum_i \alpha_i y_i=0,\ 0 \leq \alpha_i \leq C,\ i=1,2,\cdots,m.$$
 
 ## Adaboost
 GBDT算法.
