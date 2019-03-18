@@ -4,7 +4,8 @@
 二分类的线性模型：$f(x)=sign(w \cdot x+b)$,策略是极小化损失函数：$min_{w,b} L(w,b)=-\sum_{x_i \in M}y_i (w_i \cdot x_i+b)$，M是误分类样本集合，通常采用随机梯度下降法求解.
 
 ## k近邻
-多数表决分类策略：for (x,y),$y=argmax_{c_j}\sum_{x_i \in N_k(x)} I(y_i=c_j)$
+多数表决分类策略
+$$for (x,y),$y=argmax_{c_j}\sum_{x_i \in N_k(x)} I(y_i=c_j)$$
 
 ## 朴素贝叶斯
 朴素贝叶斯是典型的生成学习方法，目标是学习联合概率分布P(X,Y)，进而求得后验概率分布P(Y|X).其基本假设是属性的条件独立性，即$P(X=x|Y=c_k)=\prod_{j=1}^n P(X^{(j)}=x^{(j)}|Y=c_k).$  
@@ -40,6 +41,14 @@ $$s.t. \ \ y_i(w^{T}x_i+b) \geq 1,\ i=1,2,\cdots,m.$$
 - 对偶问题
 $$max_{\alpha} \ \ \sum_{i=1}^m \alpha_i-\frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j x_i^{T}x_j$$
 $$s.t. \ \ \sum_i \alpha_i y_i=0,\ \alpha_i \geq 0,\ i=1,2,\cdots,m.$$
+高效算法SMO，其思想每次选取$\alpha_i,\alpha_j$并固定其他参数进行优化.
+- 核方法
+$$max_{\alpha} \ \ \sum_{i=1}^m \alpha_i-\frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j \mathcal{k}(x_i,x_j)$$
+$$s.t. \ \ \sum_i \alpha_i y_i=0,\ \alpha_i \geq 0,\ i=1,2,\cdots,m.$$
+- 软间隔
+替代$\mathcal{l}_{0/1}$损失函数：hinge损失$max{0,1-z}$、指数损失$e^{-z}$、对率损失$log(1+e^{-z})$.
+$$max_{\alpha} \ \ \sum_{i=1}^m \alpha_i-\frac{1}{2}\sum_i \sum_j \alpha_i \alpha_j y_i y_j x_i^{T}x_j$$
+$$s.t. \ \ \sum_i \alpha_i y_i=0,\ 0 \geq \alpha_i \leq C,\ i=1,2,\cdots,m.$$
 
 ## Adaboost
 GBDT算法.
