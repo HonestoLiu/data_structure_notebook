@@ -35,7 +35,8 @@ $L(w)=\prod_{i=1}^N P(Y=1|x)^{y_i} P(Y=0|x)^{1-y_i}$
 
 ## svm支撑向量机
 - 最基本模型：最大化间隔
-$$\begin{align} min_{w,b} \frac{1}{2}||w||^2  \\  s.t. \ y_i(w^{T}x_i+b) \geq 1,\ i=1,2,\cdots,m. \end{align}$$
+$$min_{w,b} \frac{1}{2}||w||^2$$
+$$s.t. \ y_i(w^{T}x_i+b) \geq 1,\ i=1,2,\cdots,m.$$
 
 ## Adaboost
 GBDT算法.
