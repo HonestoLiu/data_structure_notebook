@@ -53,16 +53,15 @@ $$s.t. \ \ \sum_i \alpha_i y_i=0,\ 0 \leq \alpha_i \leq C,\ i=1,2,\cdots,m.$$
 ## Adaboost
 Adaboost提高那些被前一轮分类器错误分类样本的权重；多分类器的组合，Adaboost采取加权多数表决的方法.
 1. 权值分布：$D_m=(w_{m1},w_{m2},\cdots,w_{mN})$，计算第m个基分类器：
-$$G_m(x): \mathcal{X} \to \{-1,+1\}$$
+$$G_m(x): \mathcal{X} \to \{ -1,+1 \}$$
 2. 分类误差：$e_m=\sum w_{mi}I(G_m(x_i) \\neq y_i)$,基分类器的权重系数：$\alpha_m=\frac{1}{2}ln(\frac{1-e_m}{e_m})$.
 3. 更新权重：$w_{m+1,i}=\frac{w_{mi}e^{-\alpha_m y_i G_m(x_i))}}{Z_m}$，其中$Z_m=\sum w_{mi}e^{-\alpha_m y_i G_m(x_i)}.$
-4. 最终分类器：$f(x)=\sum \alpha_m G_m(x_i), \ G(x)=sign(f(x)).$
+4. 最终分类器：$f(x)=\sum \alpha_m G_m(x_i), \ G(x)=sign(f(x)).$  
 Adaboost算法的另一个解释，即认为Adaboost算法是加法模型、损失函数为指数函数、学习算法为“前向分步”时的二分类学习方法。
-- GBDT算法
-
+- GBDT算法  
+以决策树为基函数的提升方法称为提升树。回归问题的提升树（平方误差损失函数）策略很简单：每步使用回归树拟合残差。损失函数是平方损失和指数损失函数时，每一步优化是简单的。对一般损失函数而言，采应梯度提升算法（gradient boosting），即使用$-\[ \frac{\partial L(y,f(x_i))}{\partial f(x_i)} \]|_{f(x)=f_{m-1}(x)$作为残差的近似值，拟合一个回归树。
 
 Adaboost个体学习器间存在强依赖关系，需要串行序列化生成.不存在强依赖关系、同时并行生成的方法有Bagging、Random Forest. Bagging每次随机采样训练样本得到基分类器，再将基分类器结合.RF采用决策树作为基分类器，决策树训练过程中引入了随机属性选择，即每次随机选取属性子集构建决策树.
 # 数据结构
 ## 排序
-balabala.
 
