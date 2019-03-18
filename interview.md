@@ -1,4 +1,8 @@
 # 机器学习  
+## k近邻
+多数表决分类策略：for (x,y),$y=argmax_{c_j}\sum_{x_i \in N_k(x) I(y_i=c_j).$
+## 感知器
+二分类的线性模型：$f(x)=sign(w \cdot x+b)$,策略是极小化损失函数：$min_{w,b} L(w,b)=-\sum_{x_i \in M}y_i (w_i \cdot x_i+b).$，通常采用随机梯度下降法求解.
 ## Tree分类回归树
 ### 离散分类树
 1. 特征选择：信息增益、信息增益比、基尼指数
@@ -23,7 +27,7 @@ $P(Y=K|x)=\frac{1}{1+\sum_{k=1}^{K} e^{w_k \cdot x}}$
 - 使用似然函数求解参数w  
 $L(w)=\prod_{i=1}^N P(Y=1|x)^{y_i} P(Y=0|x)^{1-y_i}$  
 对数似然函数 $LL(w)=log(L(w)).$  
-对w求导可得w的估计值.
+使用梯度下降法或者拟牛顿法求解w.
 
 ## Adaboost
 GBDT算法.
