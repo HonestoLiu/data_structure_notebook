@@ -13,7 +13,16 @@
 balabala.
 
 ## LR逻辑斯蒂回归
-balabala.
+- 二分类  
+$P(Y=1|x)=\frac{e^{w\cdot x}}{1+e^{w\cdot x}}$  
+$P(Y=0|x)=\frac{1}{1+e^{w\cdot x}}$
+- 多分类
+$P(Y=k|x)=\frac{e^{w_k \cdot x}}{1+\sum_{k=1}^{K} e^{w_k \cdot x}}, k=1,2,\cdots,K-1$  
+$P(Y=K|x)=\frac{1}{1+\sum_{k=1}^{K} e^{w_k \cdot x}}$  
+其中$x \in \mathrm{R}^{n+1},w_k \in \mathrm{R}^{n+1}$
+- 使用似然函数求解参数w
+$L(w)=\proc_{i=1}^N P(Y=1|x)^{y_i} P(Y=0|x)^{1-y_i}$  
+对数似然函数 $LL(w)=log(L(w)).$ 对w求导可得w的估计值.
 
 ## Adaboost
 GBDT算法.
