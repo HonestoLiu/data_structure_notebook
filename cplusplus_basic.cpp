@@ -35,3 +35,21 @@
 		string ID;
 		int Grade;
 	}s1;	//s1是一个Student型的变量
+
+
+/* c++小数点控制输出 */
+	#include <iomanip>
+	cout<<fixed<<setprecision(2)<<result;	//保留小数点两位 
+
+
+/* string-int的相互转换 */
+	string str="123.45";
+	int a = atoi(str.c_str());
+	float b = atof(str.c_str());
+	long c = atol(str.c_str());
+
+	int num = 101;
+	string str = to_string(num);
+
+
+
