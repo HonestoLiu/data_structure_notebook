@@ -30,7 +30,7 @@
 		struct BiTNode *lchild, *rchild;
 	}BiTNode, *BiTree;	//BiTNode=struct BiTNode, BiTree = struct BiTNode *
 
-// c++版本
+//	c++版本
 	struct Student{
 		string ID;
 		int Grade;
@@ -52,4 +52,20 @@
 	string str = to_string(num);
 
 
+/* 输出 [begin,end]的全排列 */ 
+	void Permutation(string a,int begin,int end)
+	{
+		if(begin==end){
+			for(int p=0;p<=end;p++)
+				cout<<a[p];
+			cout<<endl;		
+		}
+		else{
+			for(int p = begin;p<=end;p++){
+				swap(a[p],a[begin]);
+				Permutation(a,begin+1,end);
+				swap(a[p],a[begin]);
+			}		
+		}
+	}
 
