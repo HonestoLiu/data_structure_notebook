@@ -53,12 +53,14 @@
 
 
 /* 输出 [begin,end]的全排列 */ 
+	vector<string> res;
 	void Permutation(string a,int begin,int end)
 	{
 		if(begin==end){
 			for(int p=0;p<=end;p++)
 				cout<<a[p];
-			cout<<endl;		
+			cout<<endl;
+			res.push_back(s);
 		}
 		else{
 			for(int p = begin;p<=end;p++){
@@ -69,3 +71,8 @@
 		}
 	}
 
+
+/* 数组长度 */
+	int a[] = {1,2,3,2,1,2,3};
+	int len1 = sizeof(a)/sizeof(a[0]);
+	int len2 = end(a)-begin(a);
