@@ -6,12 +6,13 @@ void swap(int& n1, int& n2){
 	n2 = tmp;
 }
 
-//1.Ã°ÅİÅÅĞò -- Ã¿´ÎÈÃĞ¡ÔªËØÉÏ¸¡ 
+//1.å†’æ³¡æ’åº -- æ¯æ¬¡è®©å°å…ƒç´ ä¸Šæµ® 
 void Bubble_Sort(int* list,int len){
 	bool flag = true;
 	for(int i=0;i<len-1&&flag;i++){
+		
 		for(int j=len-1;j>i;j--){
-			if(list[j]<list[j-1]){	//±È½ÏÁ¬ĞøÁ½¸öÊıµÄÖµ 
+			if(list[j]<list[j-1]){	//æ¯”è¾ƒè¿ç»­ä¸¤ä¸ªæ•°çš„å€¼ 
 				swap(list[j],list[j-1]);
 				flag = true;
 			}
@@ -19,7 +20,7 @@ void Bubble_Sort(int* list,int len){
 	}
 }
 
-//2.¿ìËÙÅÅĞò -- °ÑÊı×é·Ö³ÉÁ½²¿·Ö 
+//2.å¿«é€Ÿæ’åº -- æŠŠæ•°ç»„åˆ†æˆä¸¤éƒ¨åˆ† 
 void Qsort(int* list,int begin,int end){
 	if(begin<end){
 		int low = begin, high = end;
@@ -27,19 +28,19 @@ void Qsort(int* list,int begin,int end){
 		while(low<high){
 			while(low<high&&list[high]>=tmp)
 				high--;
-			list[low]=list[high];	//±ÈtmpĞ¡£¬ÒÆµ½×ó¶Ë 
+			list[low]=list[high];	//æ¯”tmpå°ï¼Œç§»åˆ°å·¦ç«¯ 
 			while(low<high&&list[low]<=tmp)
 				low++;
-			list[high]=list[low];	//±Ètmpµ½£¬ÒÆµ½ÓÒ¶Ë 
+			list[high]=list[low];	//æ¯”tmpåˆ°ï¼Œç§»åˆ°å³ç«¯ 
 		}
 		list[low] = tmp;
-		Qsort(list,begin,low-1);	// µİ¹é 
-		Qsort(list,low+1,end);		// µİ¹é 
+		Qsort(list,begin,low-1);	// é€’å½’ 
+		Qsort(list,low+1,end);		// é€’å½’ 
 	}
 } 
 
 
-//3.Ñ¡ÔñÅÅĞò -- Ã¿´ÎÑ¡ÔñÊ£Óà×îĞ¡µÄ 
+//3.é€‰æ‹©æ’åº -- æ¯æ¬¡é€‰æ‹©å‰©ä½™æœ€å°çš„ 
 void Select_Sort(int* list,int len){
 	for(int i=0;i<len;i++){
 		int min = i;
@@ -51,10 +52,10 @@ void Select_Sort(int* list,int len){
 	}
 } 
 
-//4.²åÈëÅÅĞò -- Ã¿´Î½«ÔªËØ²åÈëµ½Ç°ÃæÓĞĞò×ÓÁĞÀï
+//4.æ’å…¥æ’åº -- æ¯æ¬¡å°†å…ƒç´ æ’å…¥åˆ°å‰é¢æœ‰åºå­åˆ—é‡Œ
 void Insert_Sort(int* list,int len){
 	for(int i=1;i<len;i++){
-		if(list[i]<list[i-1]){	//Ğè²åÈë 
+		if(list[i]<list[i-1]){	//éœ€æ’å…¥ 
 			int tmp = list[i];
 			int index=0;
 			for(index=i-1;index>=0&&(list[index]>tmp);index--)
