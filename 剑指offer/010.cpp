@@ -11,13 +11,14 @@ public:
             return 2;
         return jumpFloor(number-1)+jumpFloor(number-2);
     }
+	//递归关系为斐波那契数列
     int jumpFloor_1(int number) {
     	int f=1,g=1;
     	while(--number>0){
     		g=g+f;
     		f=g-f;
-		}
-		return g;
+	}
+	return g;
     }
 };
  
