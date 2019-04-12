@@ -18,11 +18,11 @@ public:
     // 简洁写法 
     int Fibonacci_1(int n) {
 		int f=0,g=1;
-		while(n-->0){
+		while(n-->0){	//n--返回的是n没有--前的值 
 			g=g+f;
 			f=g-f;
 		}
-		return g;
+		return f;
     }
 };
  
