@@ -1,21 +1,21 @@
 /*  vector  */ 
 vector<int> A;
 vector<int> A(10);
-vector<int> A(10,1);	//³õÊ¼»¯ÎªÓĞ10¸öÔªËØ£¬²¢¸³ÖµÎª1
-vector<int> A(iterator first,iterator last);	//³õÊ¼»¯ÎªÆäËûÈİÆ÷µÄ [first,last) 
+vector<int> A(10,1);	//åˆå§‹åŒ–ä¸ºæœ‰10ä¸ªå…ƒç´ ï¼Œå¹¶èµ‹å€¼ä¸º1
+vector<int> A(iterator first,iterator last);	//åˆå§‹åŒ–ä¸ºå…¶ä»–å®¹å™¨çš„ [first,last) 
 vec.push_back(a);
 vec.pop_back();
-vec.front() = 100;	//µÚÒ»¸öÔªËØµÄÒıÓÃ 
-vec.insert(position,elem)   //ÔÚposÎ»ÖÃ²åÈëÒ»¸öelem¿½±´£¬´«»ØĞÂÊı¾İÎ»ÖÃ¡£
-vec.insert(position,n,elem) //ÔÚposÎ»ÖÃ²åÈën¸öelemÊı¾İ£¬ÎŞ·µ»ØÖµ¡£
-vec.insert(position,begin,end)  //ÔÚposÎ»ÖÃ²åÈëÔÚ[beg,end)Çø¼äµÄÊı¾İ£¬ÎŞ·µ»ØÖµ¡£
-vec.erase(iterator it);		//É¾³ıÖ¸¶¨Î»ÖÃÔªËØ 
+vec.front() = 100;	//ç¬¬ä¸€ä¸ªå…ƒç´ çš„å¼•ç”¨ 
+vec.insert(position,elem)   //åœ¨posä½ç½®æ’å…¥ä¸€ä¸ªelemæ‹·è´ï¼Œä¼ å›æ–°æ•°æ®ä½ç½®ã€‚
+vec.insert(position,n,elem) //åœ¨posä½ç½®æ’å…¥nä¸ªelemæ•°æ®ï¼Œæ— è¿”å›å€¼ã€‚
+vec.insert(position,begin,end)  //åœ¨posä½ç½®æ’å…¥åœ¨[beg,end)åŒºé—´çš„æ•°æ®ï¼Œæ— è¿”å›å€¼ã€‚
+vec.erase(iterator it);		//åˆ é™¤æŒ‡å®šä½ç½®å…ƒç´  
 vec.erase(iterator first, iterator last);
-cout << vec[1];		//[]·ÃÎÊ£¬ÓÉÓÚvectorÖØÔØÁË[]£¬ËùÒÔ¿ÉÒÔÀûÓÃ[]Ö±½Ó·ÃÎÊÒÑÓĞÔªËØ
-vec.at(1);			//at()º¯Êı¾ßÓĞ¼ì²âÊÇ·ñÔ½½çµÄ¹¦ÄÜ£¬Èç¹ûÔ½½ç»áÅ×³ö´íÎó£¬ËùÒÔ°²È«ĞÔ¸ßÓÚ[]
-vector <int>::iterator it;		//µü´úÆ÷·ÃÎÊ
+cout << vec[1];		//[]è®¿é—®ï¼Œç”±äºvectoré‡è½½äº†[]ï¼Œæ‰€ä»¥å¯ä»¥åˆ©ç”¨[]ç›´æ¥è®¿é—®å·²æœ‰å…ƒç´ 
+vec.at(1);			//at()å‡½æ•°å…·æœ‰æ£€æµ‹æ˜¯å¦è¶Šç•Œçš„åŠŸèƒ½ï¼Œå¦‚æœè¶Šç•Œä¼šæŠ›å‡ºé”™è¯¯ï¼Œæ‰€ä»¥å®‰å…¨æ€§é«˜äº[]
+vector <int>::iterator it;		//è¿­ä»£å™¨è®¿é—®
 for (it = vec.begin(); it != vec.end(); it++) cout << *it; 
-vec.swap(v);	//ÓëÍ¬ÀàĞÍÈİÆ÷v»¥»» 
+vec.swap(v);	//ä¸åŒç±»å‹å®¹å™¨väº’æ¢ 
 vec.clear();
 if(vec.empty())
 int n = vec.size();
@@ -24,32 +24,32 @@ int n = vec.size();
 /*  list  */
 int a[5] = {1,2,3,2,1};
 list<int> A(a,a+5);
-A.sort();	//×Ô´øµÄsort³ÉÔ±º¯Êı
-A.remove(2);	//ÒÆ³ıµÈÓÚ2µÄÔªËØ 
+A.sort();	//è‡ªå¸¦çš„sortæˆå‘˜å‡½æ•°
+A.remove(2);	//ç§»é™¤ç­‰äº2çš„å…ƒç´  
 A.reverse();
-A.unique();	//È¥ÖØ
+A.unique();	//å»é‡
 list<int> first;
 list<int> second;
-first.merge(second);//ºÏ²¢
+first.merge(second);//åˆå¹¶
 void splice (iterator position, list& x, iterator first, iterator last);  
-//Ö§³Öerase£¬pop_back, push_back, swap, clear, 
-//²»Ö§³Ö[]·ÃÎÊ 
+//æ”¯æŒeraseï¼Œpop_back, push_back, swap, clear, 
+//ä¸æ”¯æŒ[]è®¿é—® 
 
 
 /*  map  */
-map <int,string> mp;	//´´½¨ÁËÒ»¸öÒÔintÎªkey£¬stringÎªvalueµÄ¼üÖµ¶Ô¡£
+map <int,string> mp;	//åˆ›å»ºäº†ä¸€ä¸ªä»¥intä¸ºkeyï¼Œstringä¸ºvalueçš„é”®å€¼å¯¹ã€‚
 map <int,string>::iterator it; 
-//²åÈë£¬×¢ÒâÇ°Á½ÖÖÖ»ÄÜÔÚmapÄÚÎŞ´ËÔªËØµÄÊ±ºò²åÈë£¬¶ø×îºóÒ»ÖÖ¿ÉÒÔÊµÏÖ¸²¸ÇÔÙ¸³Öµ
-mp.insert(make_pair(1, "one"));		//ÀûÓÃmake_pairº¯Êı¹¹Ôì³öÒ»¶Ô¹ØÁªÁ¿²åÈë
-mp.insert(map<int, string>::value_type(1, "one"));	//²åÈëmapµÄvalue_typeÊı¾İ
-mp[1] = "one";		//*ÀûÓÃÖØÔØ[]ÊäÈë¸³Öµ*
+//æ’å…¥ï¼Œæ³¨æ„å‰ä¸¤ç§åªèƒ½åœ¨mapå†…æ— æ­¤å…ƒç´ çš„æ—¶å€™æ’å…¥ï¼Œè€Œæœ€åä¸€ç§å¯ä»¥å®ç°è¦†ç›–å†èµ‹å€¼
+mp.insert(make_pair(1, "one"));		//åˆ©ç”¨make_pairå‡½æ•°æ„é€ å‡ºä¸€å¯¹å…³è”é‡æ’å…¥
+mp.insert(map<int, string>::value_type(1, "one"));	//æ’å…¥mapçš„value_typeæ•°æ®
+mp[1] = "one";		//*åˆ©ç”¨é‡è½½[]è¾“å…¥èµ‹å€¼*
 mp.at(2) = "two";
-//earse(É¾³ı)
-mp.erase£¨iterator it);
-mp.erase£¨iterator first£¬iterator last);
-int n = erase(const Key&key);		//Í¨¹ı¹Ø¼ü×ÖÉ¾³ı£¬É¾³ı³É¹¦n==1.·ñÔò==0
-mp.find(1);//·µ»ØkeyËùÔÚµÄµü´úÆ÷£¬·ñÔò·µ»Øend()
-//lower_bound(²éÕÒµÚÒ»¸ö´óÓÚµÈÓÚkeyµÄÖµ)upper_bound(²éÕÒµÚÒ»¸ö´óÓÚkeyµÄÖµ)
+//earse(åˆ é™¤)
+mp.eraseï¼ˆiterator it);
+mp.eraseï¼ˆiterator firstï¼Œiterator last);
+int n = erase(const Key&key);		//é€šè¿‡å…³é”®å­—åˆ é™¤ï¼Œåˆ é™¤æˆåŠŸn==1.å¦åˆ™==0
+mp.find(1);//è¿”å›keyæ‰€åœ¨çš„è¿­ä»£å™¨ï¼Œå¦åˆ™è¿”å›end()
+//lower_bound(æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå¤§äºç­‰äºkeyçš„å€¼)upper_bound(æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå¤§äºkeyçš„å€¼)
 it = mp.lower_bound(1);
 it = mp.upper.bound(1);
 
@@ -57,13 +57,13 @@ it = mp.upper.bound(1);
 /*  set  */
 int a[5] = {3,4,1,9,2};
 set<int> A(a,a+5);
-int cnt = A.count(2); 	//Í³¼Æ
+int cnt = A.count(2); 	//ç»Ÿè®¡
 set<int>::iterator p1 = A.lower_bound(3);
 set<int>::iterator p2 = A.upper_bound(4);
-A.erase(iterator it);	//É¾³ı 
-pair<set<int>::iterator,bool> result = A.insert(5);	//²¢²»ÄÜ×ÜÊÇ²åÈë³É¹¦
-set<int>::iterator p = A.find(4);	//²éÕÒ £¬ÕÒ²»µ½·µ»Øend() 
-//²»Ö§³ÖÏÂ±ê[]·ÃÎÊ 
+A.erase(iterator it);	//åˆ é™¤ 
+pair<set<int>::iterator,bool> result = A.insert(5);	//å¹¶ä¸èƒ½æ€»æ˜¯æ’å…¥æˆåŠŸ
+set<int>::iterator p = A.find(4);	//æŸ¥æ‰¾ ï¼Œæ‰¾ä¸åˆ°è¿”å›end() 
+//ä¸æ”¯æŒä¸‹æ ‡[]è®¿é—® 
 
 
 /* Stack */
@@ -73,6 +73,7 @@ st.pop();
 int a = st.top();
 int a = st.size();
 bool b = st.empty();
+
 /* Queue */
 queue<int> que;
 que.push(a);
@@ -81,6 +82,21 @@ a = que.back();
 que.pop();
 bool b = que.empty();
 a = que.size();
+
+
+/* deque */
+deque<int> deq;
+deq.push_back(a);
+deq.pop_back();
+deq.push_front();
+deq.pop_front();
+deq.erase(position);
+deq.insert(position,ele);
+bool b = deq.empty();
+a = deq.size();
+a = deq.front();
+a = deq.back();
+
 /* priority_queue */
 struct node{
     int x,y;
@@ -88,9 +104,9 @@ struct node{
         return x<a.x;
     }
 };
-priority_queue <node>;	//ÖØÔØĞ¡ÓÚ£¬¿ÉÒÔÀûÓÃÖØÔØĞ¡ÓÚÀ´×Ô¶¨ÒåÓÅÏÈ¼¶
-priority_queue <int, vector<int>, greater<int> > que2;	//ÉıĞò
-priority_queue <int> que;	//´´½¨ÊµÀı£¬Ä¬ÈÏ½µĞò
+priority_queue <node>;	//é‡è½½å°äºï¼Œå¯ä»¥åˆ©ç”¨é‡è½½å°äºæ¥è‡ªå®šä¹‰ä¼˜å…ˆçº§
+priority_queue <int, vector<int>, greater<int> > que2;	//å‡åº
+priority_queue <int> que;	//åˆ›å»ºå®ä¾‹ï¼Œé»˜è®¤é™åº
 que.push(a);
 a = que.top();
 que.pop();
