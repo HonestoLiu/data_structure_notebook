@@ -1,5 +1,5 @@
 /*
-ÊäÈëÁ½¿Ã¶þ²æÊ÷A£¬B£¬ÅÐ¶ÏBÊÇ²»ÊÇAµÄ×Ó½á¹¹¡££¨ps£ºÎÒÃÇÔ¼¶¨¿ÕÊ÷²»ÊÇÈÎÒâÒ»¸öÊ÷µÄ×Ó½á¹¹£©
+è¾“å…¥ä¸¤æ£µäºŒå‰æ ‘Aï¼ŒBï¼Œåˆ¤æ–­Bæ˜¯ä¸æ˜¯Açš„å­ç»“æž„ã€‚ï¼ˆpsï¼šæˆ‘ä»¬çº¦å®šç©ºæ ‘ä¸æ˜¯ä»»æ„ä¸€ä¸ªæ ‘çš„å­ç»“æž„ï¼‰
 */
 
 /*
@@ -12,7 +12,7 @@ struct TreeNode {
 	}
 };*/
 
-//Å£¿ÍÍø²Î¿¼×ö·¨
+//ç‰›å®¢ç½‘å‚è€ƒåšæ³•
 class Solution {
 public:
     bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
@@ -28,5 +28,4 @@ public:
             return false;
         return pRoot1->val==pRoot2->val && IsSubtree(pRoot1->left,pRoot2->left) && IsSubtree(pRoot1->right,pRoot2->right);
     }
-
 };
