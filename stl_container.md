@@ -56,7 +56,7 @@
         lst.insert(pos,elem);       //在pos位置插入一个elem拷贝，传回新数据位置
         lst.insert(pos,n,elem);     //在pos位置插入n个elem数据，无返回值
         lst.insert(pos,begin,end);  //在pos位置插入在[beg,end)区间的数据，无返回值
-        lst.erase(iterator it);	    //删除指定位置元素 
+        lst.erase(iterator it);     //删除指定位置元素 
         lst.erase(iterator first, iterator last);
         lst.remove(elem);           //移除等于elem的元素
         lst.assign(iterator first, iterator last);
@@ -83,6 +83,44 @@
 
 # **string**  
 待完成.
+
+# **比特set**  
+- 初始化  
+
+        bitset<10> bst;     //bst=0000000000，默认补0
+        bitset<4> bst(16);  //16=[... ... ... 00010000],bst=0000,从后往前取
+        bitset<4> bst("101111");    //bst=1011,从前往后取
+        //需注意，bitset默认[0]在最右边
+        
+- 操作符  
+
+        ~ ^ & | >> << == != ^= |= &=
+        [] //可下标访问
+        
+- 函数  
+
+        bst.count();    //1的个数
+        bst.size();
+        (bool) bst.test(pos); //1返回true
+        (bool) bst.any();   //有1
+        (bool) bst.none();  //无1
+        (bool) bst.all();   //全1?
+        bst.flip(pos);  //pos位取反，无参时全部取反
+        bst.set();      //全部置1
+        bst.reset();    //全部置0
+        bst.set(pos,1); //bst[pos]=1
+        bst.set(pos);   //bst[pos]=1
+        bst.reset(pos); //bst[pos]=0
+
+- 类型转换
+
+        string s = bst.to_string();
+        unsigned long a = bst.to_ulong();
+        unsigned long long a = bst.to_ullong();
+        
+
+        
+        
 
 # **STL常用算法**  
 待完成.
