@@ -1,20 +1,46 @@
 /*
-{6,-3,-2,7,-15,1,2,2},Á¬Ğø×ÓÏòÁ¿µÄ×î´óºÍÎª8(´ÓµÚ0¸ö¿ªÊ¼,µ½µÚ3¸öÎªÖ¹)¡£
-¸øÒ»¸öÊı×é£¬·µ»ØËüµÄ×î´óÁ¬Ğø×ÓĞòÁĞµÄºÍ£¬Äã»á²»»á±»ËûºöÓÆ×¡£¿(×ÓÏòÁ¿µÄ³¤¶ÈÖÁÉÙÊÇ1)
+{6,-3,-2,7,-15,1,2,2},è¿ç»­å­å‘é‡çš„æœ€å¤§å’Œä¸º8(ä»ç¬¬0ä¸ªå¼€å§‹,åˆ°ç¬¬3ä¸ªä¸ºæ­¢)ã€‚
+ç»™ä¸€ä¸ªæ•°ç»„ï¼Œè¿”å›å®ƒçš„æœ€å¤§è¿ç»­å­åºåˆ—çš„å’Œï¼Œä½ ä¼šä¸ä¼šè¢«ä»–å¿½æ‚ ä½ï¼Ÿ(å­å‘é‡çš„é•¿åº¦è‡³å°‘æ˜¯1)
 */
+
+#include <iostream>
+#include <vector>
+using namespace std;
 
 class Solution {
 public:
+	//è‡ªå·± 
     int FindGreatestSumOfSubArray(vector<int> array) {
-        int p=0,sum=0,res=array[0];
+        int p=0,sum=0,res=array[0];		//resæ˜¯æœ€å¤§å’Œ 
         while(p<array.size()){
             sum+=array[p];
-            if(sum>res)
+            if(sum>res)		//sumè®°å½•i-jçš„å’Œï¼Œè‹¥æ¯”reså¤§,æ¢ 
                 res=sum;
-            if(sum<0)
+            if(sum<0)	//sum<0ï¼Œä¸¢å¼ƒi-jçš„å’Œ 
                 sum=0;
             p++;
         }
         return res;
     }
+    
+    //ç‰›å®¢ F(i)=ä»¥array[i]ä¸ºæœ«å°¾å…ƒç´ çš„å­æ•°ç»„çš„å’Œçš„æœ€å¤§å€¼
+    //è½¬ç§»æ–¹ç¨‹ï¼šF(i) = max( F(i-1)+array[i], arrray[i] )
+	// resturn max( F(i) ) 
+    int FindGreatestSumOfSubArray_1(vector<int> array) {
+        int f = array[0]; //è®°å½•å½“å‰æ‰€æœ‰å­æ•°ç»„çš„å’Œçš„æœ€å¤§å€¼
+        int res=array[0];   //åŒ…å«array[i]çš„è¿ç»­æ•°ç»„æœ€å¤§å€¼
+        for (int i = 1; i < array.size(); i++) {
+            f=max(f+array[i], array[i]);
+            res=max(f, res);
+        }
+        return res;
+    } 
 };
+
+int main(){
+	vector<int> A = {-1,-2,-3,4,-6,7,-2,9};
+	Solution solu;
+	cout<<solu.FindGreatestSumOfSubArray_1(A)<<endl;
+	return 0;
+}
+ 
