@@ -10,7 +10,7 @@ void swap(int& n1, int& n2){
 void Bubble_Sort(int* list,int len){
 	bool flag = true;
 	for(int i=0;i<len-1&&flag;i++){
-		
+		flag = False;
 		for(int j=len-1;j>i;j--){
 			if(list[j]<list[j-1]){	//比较连续两个数的值 
 				swap(list[j],list[j-1]);
